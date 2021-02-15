@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Artistas
 {
-	[CreateAssetMenu(fileName = "New Currency", menuName = "Currency/New Currency")]
+	[CreateAssetMenu(fileName = "New Currency", menuName = "Artistas/Currency/New Currency")]
 	public class Currency : ScriptableObject
 	{
 		public string currencyName;
