@@ -28,44 +28,28 @@ namespace Artistas
 			return amount >= targetAmount;
 		}
 
-		public void Add(int value)
+		public bool Add(int value)
 		{
+			if (amount + value < 0)
+			{
+				return false;
+			}
+
 			amount += value;
+
+			return true;
 		}
 
-		public void Subtract(int value)
+		public bool Subtract(int value)
 		{
+			if (amount - value < 0)
+			{
+				return false;
+			}
+
 			amount -= value;
-		}
 
-		// Returns true if the sum was not negative.
-		public bool AddKeepNonNegative(int value)
-		{
-			if (this.HasAmount(value))
-			{
-				amount += value;
-
-				return true;
-			}
-
-			amount = 0;
-
-			return false;
-		}
-
-		// Returns true if the subtraction was not negative.
-		public bool SubtractKeepNonNegative(int value)
-		{
-			if (this.HasAmount(value))
-			{
-				amount -= value;
-
-				return true;
-			}
-
-			amount = 0;
-
-			return false;
+			return true;
 		}
 	}
 }
