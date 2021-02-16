@@ -27,9 +27,20 @@ namespace Artistas
 			}
 		}
 
-		public void AddItem(DummyItemSO newItem, int quantity)
+		// If the item already exists in the inventory, the quantity is added to it.
+		// It returns true if the item was added as a new element in the dictionary.
+		public bool AddItem(DummyItemSO newItem, int quantity)
 		{
+			if (items.ContainsKey(newItem))
+			{
+				items[newItem] += quantity;
+
+				return false;
+			}
+
 			items[newItem] = quantity;
+
+			return true;
 		}
 
 		public bool RemoveItem(DummyItemSO item)
@@ -37,7 +48,7 @@ namespace Artistas
 			return items.Remove(item);
 		}
 
-		public bool HasItem(DummyItemSO item)
+		public bool ContainsItem(DummyItemSO item)
 		{
 			return items.ContainsKey(item);
 		}
@@ -60,9 +71,10 @@ namespace Artistas
 			return true;
 		}
 
+		// Returns false if the quantity was not changed.
 		public bool IncreaseQuantity(DummyItemSO item, int quantity)
 		{
-			if (!items.ContainsKey(item))
+			if (!items.ContainsKey(item) || quantity < 0)
 			{
 				return false;
 			}
@@ -72,9 +84,10 @@ namespace Artistas
 			return true;
 		}
 
+		// Returns false if the quantity was not changed.
 		public bool DecreaseQuantity(DummyItemSO item, int quantity)
 		{
-			if (!items.ContainsKey(item))
+			if (!items.ContainsKey(item) || quantity < 0)
 			{
 				return false;
 			}
