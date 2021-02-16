@@ -12,15 +12,15 @@ namespace Artistas
 		public int initialQuantity;
 	}
 
-	public class Inventory : MonoBehaviour
+	[CreateAssetMenu(fileName = "New Inventory", menuName = "Artistas/Inventory/New Inventory")]
+	public class InventorySO : ScriptableObject
 	{
 		private Dictionary<DummyItemSO, int> items;
 
 		// Used to add initial values using the inspector.
 		[SerializeField] private InspectorItemListEntry[] inspectorItemList;
 
-		// Might not be the best method for this initialization.
-		public void Awake()
+		public void OnEnable()
 		{
 			items = new Dictionary<DummyItemSO, int>();
 
