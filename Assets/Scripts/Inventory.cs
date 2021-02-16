@@ -21,6 +21,8 @@ namespace Artistas
 		// Might not be the best method for this initialization.
 		public void Awake()
 		{
+			items = new Dictionary<DummyItemSO, int>();
+
 			for (int i = 0; i < inspectorItemList.Length; ++i)
 			{
 				items[inspectorItemList[i].item] = inspectorItemList[i].initialQuantity;
