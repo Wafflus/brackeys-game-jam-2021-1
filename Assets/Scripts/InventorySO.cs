@@ -34,7 +34,7 @@ namespace Artistas
 		// It returns true if the item was added as a new element in the dictionary.
 		public bool AddItem(DummyItemSO newItem, int quantity)
 		{
-			if (items.ContainsKey(newItem))
+			if (ContainsItem(newItem))
 			{
 				items[newItem] += quantity;
 
@@ -64,7 +64,7 @@ namespace Artistas
 
 		public bool SetQuantity(DummyItemSO item, int newQuantity)
 		{
-			if (!items.ContainsKey(item))
+			if (!ContainsItem(item))
 			{
 				return false;
 			}
@@ -77,7 +77,7 @@ namespace Artistas
 		// Returns false if the quantity was not changed.
 		public bool IncreaseQuantity(DummyItemSO item, int quantity)
 		{
-			if (!items.ContainsKey(item) || quantity < 0)
+			if (!ContainsItem(item) || quantity < 0)
 			{
 				return false;
 			}
@@ -90,7 +90,7 @@ namespace Artistas
 		// Returns false if the quantity was not changed.
 		public bool DecreaseQuantity(DummyItemSO item, int quantity)
 		{
-			if (!items.ContainsKey(item) || quantity < 0)
+			if (!ContainsItem(item) || quantity < 0)
 			{
 				return false;
 			}
