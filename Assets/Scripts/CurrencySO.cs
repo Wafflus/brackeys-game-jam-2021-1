@@ -30,7 +30,7 @@ namespace Artistas
 
 		public bool Add(int value)
 		{
-			if (amount + value < 0)
+			if (value < 0)
 			{
 				return false;
 			}
@@ -42,7 +42,7 @@ namespace Artistas
 
 		public bool Subtract(int value)
 		{
-			if (amount - value < 0)
+			if (value < 0)
 			{
 				return false;
 			}
