@@ -30,8 +30,6 @@ namespace Artistas
 			}
 		}
 
-		// If the item already exists in the inventory, the quantity is added to it.
-		// It returns true if the item was added as a new element in the dictionary.
 		public bool AddItem(DummyItemSO newItem, int quantity)
 		{
 			if (ContainsItem(newItem))
