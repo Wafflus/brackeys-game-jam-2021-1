@@ -16,8 +16,8 @@ namespace Artistas
 	{
 		private Dictionary<DummyItemSO, int> items;
 
-		[SerializeField]
-		private InspectorItemListEntry[] inspectorItemList; // Used to add initial values using the inspector.
+		// Used to add initial values using the inspector.
+		[SerializeField] private InspectorItemListEntry[] inspectorItemList;
 
 		// Might not be the best method for this initialization.
 		public void Awake()
