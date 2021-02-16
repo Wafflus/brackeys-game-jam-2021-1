@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Artistas
 {
-	[System.Serializable]
+	[Serializable]
 	struct InspectorItemListEntry
 	{
 		public DummyItemSO item;
