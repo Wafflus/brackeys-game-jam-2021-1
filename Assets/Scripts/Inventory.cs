@@ -18,7 +18,7 @@ namespace Artistas
 		[SerializeField]
 		private InspectorItemListEntry[] inspectorItemList; // Used to add initial values using the inspector.
 
-		// Is awaken the best method for this?
+		// Might not be the best method for this initialization.
 		public void Awake()
 		{
 			for (int i = 0; i < inspectorItemList.Length; ++i)
