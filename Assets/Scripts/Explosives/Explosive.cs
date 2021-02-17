@@ -46,6 +46,10 @@ namespace Artistas
         {
             gameObject.layer = LayerMask.NameToLayer("Props");
 
+            GameObject explosionEffect = Instantiate(explosiveSO.GetRandomExplosionEffect(), transform.position, Quaternion.identity);
+
+            Destroy(explosionEffect, 5f);
+
             ExplodeNearbyExplosives();
 
             ApplyExplosionForces();
