@@ -46,13 +46,9 @@ namespace Artistas
         {
             gameObject.layer = LayerMask.NameToLayer("Props");
 
-            GameObject explosionEffect = Instantiate(explosiveSO.GetRandomExplosionEffect(), transform.position, Quaternion.identity);
-
-            Destroy(explosionEffect, 5f);
-
             ExplodeNearbyExplosives();
 
-            ApplyExplosionForces();
+            DamageDestructibles();
 
             Destroy(gameObject);
         }
@@ -67,7 +63,7 @@ namespace Artistas
         private void ExplodeNearbyExplosives()
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, explosiveSO.explosionRadius, explosiveSO.explosiveCollisionLayer);
-            
+
             foreach (Collider collider in colliders)
             {
                 Explosive explosive = collider.gameObject.GetComponent<Explosive>();
@@ -83,6 +79,29 @@ namespace Artistas
 
                 explosive.Explode();
             }
+        }
+
+        private void DamageDestructibles()
+        {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, explosiveSO.explosionRadius, explosiveSO.destructibleCollisionLayer);
+
+            foreach (Collider collider in colliders)
+            {
+                Destructible destructible = collider.gameObject.GetComponent<Destructible>();
+
+                if (destructible == null)
+                {
+                    continue;
+                }
+
+                // This will have to be tested properly.
+                float distanceDamageModifier = 1f - Mathf.Clamp(Vector3.Distance(transform.position, collider.gameObject.transform.position) / explosiveSO.explosionRadius, 0f, 1f);
+                float damage = explosiveSO.explosionForce * distanceDamageModifier;
+
+                destructible.Damage(damage);
+            }
+
+            ApplyExplosionForces();
         }
 
         private void ApplyExplosionForces()

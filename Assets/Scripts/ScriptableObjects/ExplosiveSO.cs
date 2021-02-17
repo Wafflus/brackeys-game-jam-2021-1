@@ -14,6 +14,7 @@ namespace Artistas
         [Header("Collision Layers")]
         public LayerMask explosiveCollisionLayer;
         public LayerMask propsCollisionLayer;
+        public LayerMask destructibleCollisionLayer;
 
         [Header("Explosion Data")]
         [Min(0)] public float explosionRadius = 5f;
