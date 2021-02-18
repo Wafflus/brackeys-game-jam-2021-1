@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2594268226258775528}
   - component: {fileID: 2594268226258775535}
   m_Layer: 5
-  m_Name: Menus
+  m_Name: Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2047486181356546581, guid: d5391a210f0f8d743922ae85844ebb69, type: 3}
       propertyPath: m_Name
-      value: Settings
+      value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 6971724450572706409, guid: d5391a210f0f8d743922ae85844ebb69, type: 3}
       propertyPath: m_text

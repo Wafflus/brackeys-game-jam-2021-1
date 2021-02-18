@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e08548ae69a3a38ad004dba5efcb5e, type: 3}
+  m_Name: Barrel
+  m_EditorClassIdentifier: 
+  explosive: {fileID: 11400000, guid: ac010f0825c544a4690b69901f9bd8a7, type: 2}
+  explosivePrefab: {fileID: 6588501997699347000, guid: 7015caf9be2e0134eb9d3372ab1147cc, type: 3}
+  limit: 1
