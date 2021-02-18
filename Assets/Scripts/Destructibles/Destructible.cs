@@ -6,12 +6,16 @@ namespace Artistas
 	{
 		[SerializeField] private GameObject[] props;
 
-		[SerializeField] private float maxHP = 100f;
-		[SerializeField] private float currentHP = 100f;
-		[SerializeField] private float healingFactor = 10f;
+		[SerializeField] private DestructibleSO destructibleSO;
+
+		[SerializeField] private float currentHP;
 
 		[SerializeField] private CurrencySO currency;
-		[SerializeField] private int reward = 200;
+
+		public void Awake()
+		{
+			currentHP = destructibleSO.maxHP;
+		}
 
 		public void Update()
 		{
@@ -32,7 +36,7 @@ namespace Artistas
 
 		private void Destruct()
 		{
-			currency.Add(reward);
+			currency.Add(destructibleSO.reward);
 
 			for (int i = 0; i < props.Length; ++i)
 			{
@@ -44,14 +48,14 @@ namespace Artistas
 
 		private void Heal()
 		{
-			if (currentHP >= maxHP)
+			if (currentHP >= destructibleSO.maxHP)
 			{
 				return;
 			}
 
 			// This could be done differently, but it works.
-			currentHP += healingFactor * Time.deltaTime;
-			currentHP = Mathf.Clamp(currentHP, 0f, maxHP);
+			currentHP += destructibleSO.healingFactor * Time.deltaTime;
+			currentHP = Mathf.Clamp(currentHP, 0f, destructibleSO.maxHP);
 		}
 	}
 }

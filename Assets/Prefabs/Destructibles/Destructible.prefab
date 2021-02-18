@@ -116,10 +116,8 @@ MonoBehaviour:
   - {fileID: 4521288394424595489}
   - {fileID: 7302524611592146210}
   - {fileID: 3876198247555196179}
-  maxHP: 1000
+  destructibleSO: {fileID: 11400000, guid: 8a745cedbe1a4c5bd84786498a3e9812, type: 2}
   currentHP: 1000
-  healingFactor: 10
-  reward: 200
   currency: {fileID: 11400000, guid: 092ad63389937d31ea7d6c9742f132fb, type: 2}
 --- !u!1 &1690641052311237394
 GameObject:
