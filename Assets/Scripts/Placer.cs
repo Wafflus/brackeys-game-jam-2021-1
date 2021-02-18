@@ -71,7 +71,7 @@ namespace Artistas
 				return false;
 			}
 
-			Instantiate(item, transform.position, Quaternion.identity);
+			Instantiate(item, transform.position, transform.rotation);
 
 			return true;
 		}
