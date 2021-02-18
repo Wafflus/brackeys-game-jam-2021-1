@@ -13,7 +13,8 @@ namespace Artistas
 		private MeshRenderer previewRenderer;
 
 		private bool preview;
-		private bool canInstantiate = true;
+
+		private int collisionCount = 0;
 
 		public void EnablePreview()
 		{
@@ -47,7 +48,7 @@ namespace Artistas
 				return false;
 			}
 
-			return canInstantiate;
+			return collisionCount == 0;
 		}
 
 		public void UpdateItem(GameObject newItem)
@@ -83,13 +84,13 @@ namespace Artistas
 		private void OnTriggerEnter(Collider collider)
 		{
 			previewRenderer.material = blockedMaterial;
-			canInstantiate = false;
+			++collisionCount;
 		}
 
 		private void OnTriggerExit(Collider collider)
 		{
 			previewRenderer.material = allowedMaterial;
-			canInstantiate = true;
+			--collisionCount;
 		}
 
 		private void SetPreviewComponents()
@@ -105,7 +106,7 @@ namespace Artistas
 
 			CreateColliderComponent();
 
-			canInstantiate = true;
+			collisionCount = 0;
 		}
 
 		private void CreateColliderComponent()
