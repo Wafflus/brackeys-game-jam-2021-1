@@ -9,13 +9,13 @@ namespace Artistas
 		public InventorySO inventory;
 
 		public void Buy(ProductSO product)
-        {
+		{
 			int price = product.GetPrice();
 
 			if (!product.currency.HasAmount(product.GetPrice()))
 			{
 				return;
-            }
+			}
 
 			product.currency.Subtract(price);
 
