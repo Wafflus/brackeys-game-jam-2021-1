@@ -13,7 +13,7 @@ namespace Artistas
 		private MeshRenderer previewRenderer;
 
 		private bool preview;
-		private bool canInstantiate = false;
+		private bool canInstantiate = true;
 
 		public void EnablePreview()
 		{
@@ -42,12 +42,22 @@ namespace Artistas
 
 		public bool CanInstantiate()
 		{
+			if (item == null)
+			{
+				return false;
+			}
+
 			return canInstantiate;
 		}
 
 		public void UpdateItem(GameObject newItem)
 		{
 			item = newItem;
+
+			if (item == null)
+			{
+				return;
+			}
 
 			SetPreviewComponents();
 		}
@@ -70,11 +80,6 @@ namespace Artistas
 			previewRenderer = gameObject.GetComponent<MeshRenderer>();
 		}
 
-		private void Start()
-		{
-			SetPreviewComponents();
-		}
-
 		private void OnTriggerEnter(Collider collider)
 		{
 			previewRenderer.material = blockedMaterial;
@@ -89,15 +94,27 @@ namespace Artistas
 
 		private void SetPreviewComponents()
 		{
+			if (item == null)
+			{
+				return;
+			}
+
 			gameObject.GetComponent<MeshFilter>().mesh = item.GetComponent<MeshFilter>().sharedMesh;
 
 			previewRenderer.material = allowedMaterial;
 
 			CreateColliderComponent();
+
+			canInstantiate = true;
 		}
 
 		private void CreateColliderComponent()
 		{
+			if (item == null)
+			{
+				return;
+			}
+
 			if (previewCollider != null)
 			{
 				Destroy(GetComponent<Collider>());
