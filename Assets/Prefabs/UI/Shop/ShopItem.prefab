@@ -31,7 +31,7 @@ RectTransform:
   m_Children:
   - {fileID: 2700715484570347205}
   m_Father: {fileID: 8002419357512893823}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 8002419357512893823}
   - component: {fileID: 5575703911230854709}
   - component: {fileID: 7226273297322438476}
+  - component: {fileID: 8706221815808088930}
   m_Layer: 5
   m_Name: ShopItem
   m_TagString: Untagged
@@ -106,11 +107,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5058754028684897145}
-  - {fileID: 7921947050650360362}
   - {fileID: 1302302563629284700}
   - {fileID: 878134222259522207}
-  - {fileID: 3005623516438402937}
+  - {fileID: 7921947050650360362}
   - {fileID: 9011893206119394313}
+  - {fileID: 3005623516438402937}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -157,6 +158,51 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8706221815808088930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729988333667897714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2127c7f64eaa8454eb4c7780dfd4440e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  product: {fileID: 0}
+  icon: {fileID: 4429456402042797780}
+  title: {fileID: 3913695322394263622}
+  description: {fileID: 1558542654352851}
+  limit: {fileID: 1192994271802956279}
+  price: {fileID: 4079081576929003149}
+  OnBuy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 706df6e80b381b4498f8eb2e3784d52a, type: 2}
+        m_TargetAssemblyTypeName: Artistas.ShopSO, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Artistas.ShopSO, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1676020828302541149
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,13 +228,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676020828302541149}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6917145842619427620}
   m_Father: {fileID: 8002419357512893823}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -875,7 +921,7 @@ RectTransform:
   m_Children:
   - {fileID: 615113045950368872}
   m_Father: {fileID: 8002419357512893823}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1085,7 +1131,7 @@ RectTransform:
   m_Children:
   - {fileID: 53841449742727583}
   m_Father: {fileID: 8002419357512893823}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1162,7 +1208,7 @@ RectTransform:
   m_Children:
   - {fileID: 1265679820591718526}
   m_Father: {fileID: 8002419357512893823}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1250,4 +1296,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 30782758894237546}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8706221815808088930}
+        m_TargetAssemblyTypeName: Artistas.ShopItem, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
