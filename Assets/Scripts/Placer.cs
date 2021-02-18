@@ -41,7 +41,7 @@ namespace Artistas
 			return preview;
 		}
 
-		public bool CanInstantiate()
+		public bool CanPlace()
 		{
 			if (item == null)
 			{
@@ -51,7 +51,7 @@ namespace Artistas
 			return collisionCount == 0;
 		}
 
-		public void UpdateItem(GameObject newItem)
+		public void SetItem(GameObject newItem)
 		{
 			item = newItem;
 
@@ -64,9 +64,9 @@ namespace Artistas
 		}
 
 		// This might manage the inventory quantities.
-		public bool InstantiateItem()
+		public bool PlaceItem()
 		{
-			if (!CanInstantiate())
+			if (!CanPlace())
 			{
 				return false;
 			}
