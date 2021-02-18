@@ -10,7 +10,6 @@ namespace Artistas
 
 		[SerializeField] private float currentHP;
 
-		[SerializeField] private CurrencySO currency;
 
 		public void Awake()
 		{
@@ -36,7 +35,7 @@ namespace Artistas
 
 		private void Destruct()
 		{
-			currency.Add(destructibleSO.reward);
+			destructibleSO.AddReward();
 
 			for (int i = 0; i < props.Length; ++i)
 			{

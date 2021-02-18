@@ -8,5 +8,11 @@ namespace Artistas
 		public float maxHP;
 		public float healingFactor;
 		public int reward;
+		public CurrencySO currency;
+
+		public void AddReward()
+		{
+			currency.Add(reward);
+		}
 	}
 }
