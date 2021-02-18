@@ -10,10 +10,13 @@ namespace Artistas
 
 		[SerializeField] private float currentHP;
 
+		private Material hpMaterial;
+
 
 		public void Awake()
 		{
 			currentHP = destructibleSO.maxHP;
+			hpMaterial = GetComponent<Renderer>().material;
 		}
 
 		public void Update()
@@ -31,6 +34,7 @@ namespace Artistas
 			}
 
 			Destruct();
+			UpdateMaterialHP();
 		}
 
 		private void Destruct()
@@ -55,6 +59,12 @@ namespace Artistas
 			// This could be done differently, but it works.
 			currentHP += destructibleSO.healingFactor * Time.deltaTime;
 			currentHP = Mathf.Clamp(currentHP, 0f, destructibleSO.maxHP);
+			UpdateMaterialHP();
+		}
+
+		private void UpdateMaterialHP()
+		{
+			hpMaterial.SetFloat("_HP", currentHP / destructibleSO.maxHP);
 		}
 	}
 }
