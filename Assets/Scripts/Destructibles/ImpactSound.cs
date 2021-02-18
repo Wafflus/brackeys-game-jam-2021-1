@@ -4,8 +4,9 @@ namespace Artistas
 	public class ImpactSound : MonoBehaviour
 	{
 		[SerializeField] private SoundListSO soundList;
-		private Rigidbody rigidBody;
 		[SerializeField] private float minimumVelocityMagnitude = 2f;
+
+		private Rigidbody rigidBody;
 
 		public void Awake()
 		{

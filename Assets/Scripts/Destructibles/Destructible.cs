@@ -10,8 +10,8 @@ namespace Artistas
 		[SerializeField] private float currentHP = 100f;
 		[SerializeField] private float healingFactor = 10f;
 
-		[SerializeField] private int reward = 200;
 		[SerializeField] private CurrencySO currency;
+		[SerializeField] private int reward = 200;
 
 		public void Update()
 		{
@@ -22,10 +22,12 @@ namespace Artistas
 		{
 			currentHP -= damage;
 
-			if (currentHP <= 0)
+			if (currentHP > 0)
 			{
-				Destruct();
+				return;
 			}
+
+			Destruct();
 		}
 
 		private void Destruct()

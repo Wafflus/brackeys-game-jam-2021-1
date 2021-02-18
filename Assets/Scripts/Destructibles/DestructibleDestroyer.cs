@@ -7,6 +7,8 @@ public class DestructibleDestroyer : MonoBehaviour
 
 	public void OnEnable()
 	{
-		Destroy(gameObject, Random.Range(minimumTimer, maximumTimer));
+		float randomTimer = Random.Range(minimumTimer, maximumTimer);
+
+		Destroy(gameObject, randomTimer);
 	}
 }

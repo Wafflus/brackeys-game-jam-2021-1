@@ -9,7 +9,9 @@ namespace Artistas
 
 		public AudioClip GetRandomSound()
 		{
-			return sounds[Random.Range(0, sounds.Length)];
+			int randomSoundIndex = Random.Range(0, sounds.Length);
+
+			return sounds[randomSoundIndex];
 		}
 	}
 }
