@@ -6,12 +6,15 @@ namespace Artistas
     {
         [SerializeField] private ExplosiveSO explosiveSO;
 
+        private Rigidbody rb;
+
         private bool timedExplosion = false;
         private float explosionTimer;
 
         private void Awake()
         {
             explosionTimer = explosiveSO.timedExplosionTimer;
+            rb = gameObject.GetComponent<Rigidbody>();
         }
 
         private void OnDrawGizmos()
@@ -30,6 +33,16 @@ namespace Artistas
             Tick();
         }
 
+        private void FixedUpdate()
+        {
+            if (!timedExplosion)
+            {
+                return;
+            }
+
+            AddRandomShake();
+        }
+
         private void Tick()
         {
             explosionTimer -= Time.deltaTime;
@@ -40,6 +53,11 @@ namespace Artistas
 
                 Explode();
             }
+        }
+
+        public void AddRandomShake()
+        {
+            rb.AddForce(Random.insideUnitSphere.normalized * explosiveSO.maxShakeForce);
         }
 
         public void Explode()

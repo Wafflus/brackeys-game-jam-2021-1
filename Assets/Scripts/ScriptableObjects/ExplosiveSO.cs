@@ -21,6 +21,7 @@ namespace Artistas
         [Range(0, 1)] public float instantExplosionRadius = .5f;
         [Min(0)] public float explosionForce = 10f;
         [Min(0)] public float timedExplosionTimer = 1f;
+        [Min(0)] public float maxShakeForce = 2f;
 
         [Header("Explosion Visual Effects")]
         public List<GameObject> explosionEffects;

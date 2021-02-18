@@ -28,6 +28,7 @@ MonoBehaviour:
   instantExplosionRadius: 0.6
   explosionForce: 2500
   timedExplosionTimer: 1
+  maxShakeForce: 30
   explosionEffects:
   - {fileID: 3218916212543039552, guid: 86655ca7d97ac9e40a95c82f127eba91, type: 3}
   explosionGizmosData:
