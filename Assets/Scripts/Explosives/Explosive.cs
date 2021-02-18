@@ -47,8 +47,8 @@ namespace Artistas
             gameObject.layer = LayerMask.NameToLayer("Props");
 
             ExplodeNearbyExplosives();
-
             DamageDestructibles();
+            InstantiateExplosionEffect();
 
             Destroy(gameObject);
         }
@@ -119,6 +119,13 @@ namespace Artistas
 
                 colliderRigidbody.AddExplosionForce(explosiveSO.explosionForce, transform.position, explosiveSO.explosionRadius);
             }
+        }
+
+        private void InstantiateExplosionEffect()
+        {
+            GameObject explosionEffect = Instantiate(explosiveSO.GetRandomExplosionEffect(), transform.position, Quaternion.identity);
+
+            Destroy(explosionEffect, 5f);
         }
     }
 }
