@@ -57,15 +57,29 @@ namespace Artistas
 
 			if (item == null)
 			{
+				ClearItem();
+
 				return;
 			}
 
 			SetPreviewComponents();
 		}
 
+		public void ClearItem()
+		{
+			item = null;
+
+			DisablePreview();
+		}
+
 		// This might manage the inventory quantities.
 		public bool PlaceItem()
 		{
+			if (item == null)
+			{
+				return false;
+			}
+
 			if (!CanPlace())
 			{
 				return false;
