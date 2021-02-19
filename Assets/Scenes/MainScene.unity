@@ -206,6 +206,34 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 11400000, guid: 87700260270feb74cb9172e545cd4562, type: 2}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1457707820}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLimit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Artistas.SelectedItem, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565632276006252819, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
+      propertyPath: OnPlacement.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6958762761589944533, guid: 0ead92e5d81c2134c8997d259cf52950, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.5
