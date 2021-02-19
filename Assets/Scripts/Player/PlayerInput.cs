@@ -64,5 +64,10 @@ namespace Artistas
         {
             InputActions.Player.Crouch.canceled += context => action();
         }
+
+        public bool PlacedItem()
+        {
+            return InputActions.Player.PlaceItem.triggered;
+        }
     }
 }
