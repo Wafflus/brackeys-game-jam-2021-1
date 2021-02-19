@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Artistas
@@ -37,6 +38,31 @@ namespace Artistas
         public bool Jumped()
         {
             return InputActions.Player.Jump.triggered;
+        }
+
+        public float GetPlayerJumpHold()
+        {
+            return InputActions.Player.Jump.ReadValue<float>();
+        }
+
+        public float GetPlayerSprint()
+        {
+            return InputActions.Player.Sprint.ReadValue<float>();
+        }
+
+        public bool PlayerCrouched()
+        {
+            return InputActions.Player.Crouch.triggered;
+        }
+
+        public float GetPlayerCrouch()
+        {
+            return InputActions.Player.Crouch.ReadValue<float>();
+        }
+
+        public void OnPlayerCrouchCancel(Action action)
+        {
+            InputActions.Player.Crouch.canceled += context => action();
         }
     }
 }
