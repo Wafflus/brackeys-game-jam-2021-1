@@ -529,7 +529,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2594268226258775533, guid: 41aad621f88fa674a8de71380f6f7741, type: 3}
       propertyPath: m_Name
-      value: Menus
+      value: Windows
       objectReference: {fileID: 0}
     - target: {fileID: 2594268226258775534, guid: 41aad621f88fa674a8de71380f6f7741, type: 3}
       propertyPath: m_Pivot.x

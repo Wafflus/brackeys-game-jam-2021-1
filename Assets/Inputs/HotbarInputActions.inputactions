@@ -1,0 +1,163 @@
+{
+    "name": "HotbarInputActions",
+    "maps": [
+        {
+            "name": "Window",
+            "id": "a9f043f8-1196-4d3d-9b93-73c49372ae16",
+            "actions": [
+                {
+                    "name": "Shop",
+                    "type": "Button",
+                    "id": "bd49bd03-ddbb-490a-950e-32a34113cd2d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "036d9bd4-d13b-4d05-aea9-bc3874e46b84",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "22425a22-c2ec-4b7b-8e6f-bb2c74d0461c",
+                    "path": "<Keyboard>/b",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db5d3d8d-4d30-4925-bbdf-4afe296857fa",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Explosives",
+            "id": "0f78984d-2d4b-40f5-a2b2-241407aaddc2",
+            "actions": [
+                {
+                    "name": "Barrel",
+                    "type": "Button",
+                    "id": "df9829d3-bec4-4e3c-beed-4cb6a90e78de",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Gas",
+                    "type": "Button",
+                    "id": "f711c60c-f6c1-430f-93da-411613bc62f0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Box",
+                    "type": "Button",
+                    "id": "97de45ca-d00a-4863-8ef5-15e5da0bbcff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "6fb70047-99ec-4212-b623-f5d880803089",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Barrel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ac9301a4-fa3c-49b6-995f-c9037ba94263",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Gas",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e9b98ed-ca34-4246-8831-42aac940528d",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Box",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Detonator",
+            "id": "0273f60e-2ec7-42f2-bc8c-47e2f062fcbc",
+            "actions": [
+                {
+                    "name": "Explosive",
+                    "type": "Button",
+                    "id": "e9c972b4-144b-48d4-9a0c-69b620910549",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Button",
+                    "type": "Button",
+                    "id": "7d6dffe5-2acc-4760-807c-2141e765ec1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2a86a2d6-d877-4ad7-9ef1-7422991ede29",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Explosive",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "53b635e4-9d65-4af5-aa73-fbd92910d224",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
