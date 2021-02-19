@@ -5,9 +5,11 @@ namespace Artistas
 	public class Placer : MonoBehaviour
 	{
 		// This is temporary, it should be replaced when integrating it with the other systems.
-		[SerializeField] private GameObject item;
+		[SerializeField] private ItemSO item;
 		[SerializeField] private Material allowedMaterial;
 		[SerializeField] private Material blockedMaterial;
+
+		[SerializeField] private InventorySO inventory;
 
 		private Collider previewCollider;
 		private MeshRenderer previewRenderer;
@@ -48,10 +50,16 @@ namespace Artistas
 				return false;
 			}
 
+			// Quantity should never be less than 0.
+			if (!inventory.TryGetQuantity(item, out int quantity) || quantity <= 0)
+			{
+				return false;
+			}
+
 			return collisionCount == 0;
 		}
 
-		public void SetItem(GameObject newItem)
+		public void SetItem(ItemSO newItem)
 		{
 			item = newItem;
 
@@ -85,7 +93,9 @@ namespace Artistas
 				return false;
 			}
 
-			Instantiate(item, transform.position, transform.rotation);
+			inventory.DecreaseQuantity(item, 1);
+
+			Instantiate(item.explosivePrefab, transform.position, transform.rotation);
 
 			return true;
 		}
@@ -114,7 +124,7 @@ namespace Artistas
 				return;
 			}
 
-			gameObject.GetComponent<MeshFilter>().mesh = item.GetComponent<MeshFilter>().sharedMesh;
+			gameObject.GetComponent<MeshFilter>().mesh = item.explosivePrefab.GetComponent<MeshFilter>().sharedMesh;
 
 			previewRenderer.material = allowedMaterial;
 
@@ -136,9 +146,9 @@ namespace Artistas
 			}
 
 			// These checks are not very nice.
-			if (item.GetComponent<Collider>().GetType() == typeof (BoxCollider))
+			if (item.explosivePrefab.GetComponent<Collider>().GetType() == typeof (BoxCollider))
 			{
-				BoxCollider itemBoxCollider = item.GetComponent<BoxCollider>();
+				BoxCollider itemBoxCollider = item.explosivePrefab.GetComponent<BoxCollider>();
 				BoxCollider newCollider = gameObject.AddComponent<BoxCollider>() as BoxCollider;
 
 				newCollider.center = itemBoxCollider.center;
@@ -146,9 +156,9 @@ namespace Artistas
 
 				previewCollider = newCollider;
 			}
-			else if (item.GetComponent<Collider>().GetType() == typeof (SphereCollider))
+			else if (item.explosivePrefab.GetComponent<Collider>().GetType() == typeof (SphereCollider))
 			{
-				SphereCollider itemSphereCollider = item.GetComponent<SphereCollider>();
+				SphereCollider itemSphereCollider = item.explosivePrefab.GetComponent<SphereCollider>();
 				SphereCollider newCollider = gameObject.AddComponent<SphereCollider>() as SphereCollider;
 
 				newCollider.center = itemSphereCollider.center;
@@ -156,9 +166,9 @@ namespace Artistas
 
 				previewCollider = newCollider;
 			}
-			else if (item.GetComponent<Collider>().GetType() == typeof (CapsuleCollider))
+			else if (item.explosivePrefab.GetComponent<Collider>().GetType() == typeof (CapsuleCollider))
 			{
-				CapsuleCollider itemCapsuleCollider = item.GetComponent<CapsuleCollider>();
+				CapsuleCollider itemCapsuleCollider = item.explosivePrefab.GetComponent<CapsuleCollider>();
 				CapsuleCollider newCollider = gameObject.AddComponent<CapsuleCollider>() as CapsuleCollider;
 
 				newCollider.center = itemCapsuleCollider.center;
