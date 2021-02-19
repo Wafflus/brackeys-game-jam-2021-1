@@ -59,6 +59,14 @@ namespace Artistas
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PlaceItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad00b302-166f-415f-9c5e-19b9fd126bf1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -160,6 +168,17 @@ namespace Artistas
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""465ac363-abcc-4c01-b0c0-a7d3bc52cc78"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlaceItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -173,6 +192,7 @@ namespace Artistas
             m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+            m_Player_PlaceItem = m_Player.FindAction("PlaceItem", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -227,6 +247,7 @@ namespace Artistas
         private readonly InputAction m_Player_Look;
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_Crouch;
+        private readonly InputAction m_Player_PlaceItem;
         public struct PlayerActions
         {
             private @PlayerInputActions m_Wrapper;
@@ -236,6 +257,7 @@ namespace Artistas
             public InputAction @Look => m_Wrapper.m_Player_Look;
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+            public InputAction @PlaceItem => m_Wrapper.m_Player_PlaceItem;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -260,6 +282,9 @@ namespace Artistas
                     @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
                     @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
                     @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                    @PlaceItem.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceItem;
+                    @PlaceItem.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceItem;
+                    @PlaceItem.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceItem;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -279,6 +304,9 @@ namespace Artistas
                     @Crouch.started += instance.OnCrouch;
                     @Crouch.performed += instance.OnCrouch;
                     @Crouch.canceled += instance.OnCrouch;
+                    @PlaceItem.started += instance.OnPlaceItem;
+                    @PlaceItem.performed += instance.OnPlaceItem;
+                    @PlaceItem.canceled += instance.OnPlaceItem;
                 }
             }
         }
@@ -290,6 +318,7 @@ namespace Artistas
             void OnLook(InputAction.CallbackContext context);
             void OnSprint(InputAction.CallbackContext context);
             void OnCrouch(InputAction.CallbackContext context);
+            void OnPlaceItem(InputAction.CallbackContext context);
         }
     }
 }
