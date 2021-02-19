@@ -79,8 +79,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  height: 2
+  sprintSpeedBonus: 10
+  jumpHeight: 1.5
   gravity: -9.81
+  crouchHeightPercentage: 0.5
+  crouchSpeedReduction: 10
+  goBackToPreviousPosition: 1
+  moveUpSpeed: 25
+  moveDownSpeed: 25
+  moveFasterSpeed: 15
 --- !u!114 &4169732785253070032
 MonoBehaviour:
   m_ObjectHideFlags: 0
