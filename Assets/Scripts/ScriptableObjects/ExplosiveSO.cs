@@ -21,10 +21,12 @@ namespace Artistas
         [Range(0, 1)] public float instantExplosionRadius = .5f;
         [Min(0)] public float explosionForce = 10f;
         [Min(0)] public float timedExplosionTimer = 1f;
-        public SoundListSO explosionSounds;
 
         [Header("Explosion Visual Effects")]
         public List<GameObject> explosionEffects;
+
+        [Header("Explosion Sound Effects")]
+        public SoundListSO explosionSounds;
 
         [Header("Gizmos Data")]
         public GizmosData explosionGizmosData;
