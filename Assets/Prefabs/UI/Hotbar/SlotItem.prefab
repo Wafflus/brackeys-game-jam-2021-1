@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 9032142951667266222}
   - component: {fileID: 5693992108354016208}
   - component: {fileID: 3873656043126738993}
+  - component: {fileID: 6210141130632652509}
+  - component: {fileID: 8984300871731997059}
   m_Layer: 5
   m_Name: SlotItem
   m_TagString: Untagged
@@ -77,6 +79,80 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6210141130632652509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047486181356546581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dedeabea2a343654a96d68b5524d1ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionReference: {fileID: 0}
+  OnActionSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: d4cd0a6ab16176a459a5ca54f7708f31, type: 2}
+        m_TargetAssemblyTypeName: Artistas.GameEventSO, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6210141130632652509}
+        m_TargetAssemblyTypeName: Artistas.HotbarButton, Assembly-CSharp
+        m_MethodName: Select
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnActionDeselected:
+    m_PersistentCalls:
+      m_Calls: []
+  key: {fileID: 6971724450572706409}
+  keySelectedColor: {r: 1, g: 0.7600515, b: 0, a: 1}
+  keyDeselectedColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &8984300871731997059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047486181356546581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a0ddd10b0ed6245b41a93a033f1bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: d4cd0a6ab16176a459a5ca54f7708f31, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6210141130632652509}
+        m_TargetAssemblyTypeName: Artistas.HotbarButton, Assembly-CSharp
+        m_MethodName: Deselect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3999923943003475857
 GameObject:
   m_ObjectHideFlags: 0

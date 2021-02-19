@@ -5,14 +5,15 @@ namespace Artistas
 	[CreateAssetMenu(fileName = "New Product", menuName = "Artistas/Shop/New Product")]
 	public class ProductSO : ScriptableObject
 	{
-		public DummyItemSO item;
+		public ItemSO item;
+		public CurrencySO currency;
 		public int basePrice;
-		public float priceModifier;
+		public int priceIncrease;
 		public int timesPurchased;
 
 		public int GetPrice()
 		{
-			return (int)Mathf.Ceil(basePrice * Mathf.Pow(priceModifier, timesPurchased)); // A different formula might be used.
+			return basePrice + timesPurchased * priceIncrease;
 		}
 	}
 }

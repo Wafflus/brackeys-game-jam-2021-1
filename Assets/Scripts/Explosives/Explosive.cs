@@ -67,6 +67,7 @@ namespace Artistas
             ExplodeNearbyExplosives();
             DamageDestructibles();
             InstantiateExplosionEffect();
+            PlayExplosionSound();
 
             Destroy(gameObject);
         }
@@ -144,6 +145,11 @@ namespace Artistas
             GameObject explosionEffect = Instantiate(explosiveSO.GetRandomExplosionEffect(), transform.position, Quaternion.identity);
 
             Destroy(explosionEffect, 5f);
+        }
+
+        private void PlayExplosionSound()
+        {
+            AudioSource.PlayClipAtPoint(explosiveSO.explosionSounds.GetRandomSound(), transform.position, 1f);
         }
     }
 }

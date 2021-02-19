@@ -26,6 +26,9 @@ namespace Artistas
         [Header("Explosion Visual Effects")]
         public List<GameObject> explosionEffects;
 
+        [Header("Explosion Sound Effects")]
+        public SoundListSO explosionSounds;
+
         [Header("Gizmos Data")]
         public GizmosData explosionGizmosData;
         public GizmosData instantExplosionGizmosData;
