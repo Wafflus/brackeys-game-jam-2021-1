@@ -69,5 +69,10 @@ namespace Artistas
         {
             return InputActions.Player.PlaceItem.triggered;
         }
+
+        public bool TriggerBomb()
+        {
+            return InputActions.Player.TriggerBomb.triggered;
+        }
     }
 }

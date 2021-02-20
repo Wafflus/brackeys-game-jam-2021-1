@@ -126,3 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosiveSO: {fileID: 11400000, guid: 9fef38b53e628de4fb7e0c6c4ec04b3c, type: 2}
+  inventorySO: {fileID: 11400000, guid: 87700260270feb74cb9172e545cd4562, type: 2}
+  itemSO: {fileID: 11400000, guid: f5a61d1673b20c14baa694e6497c606e, type: 2}
+  itemSOEventSO: {fileID: 11400000, guid: ca3e5aeb133cf9e608edff63120957ef, type: 2}

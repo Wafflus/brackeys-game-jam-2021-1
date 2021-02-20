@@ -38,5 +38,13 @@ namespace Artistas
 
             limit.text = itemQuantity.ToString() + "/" + item.limit.ToString();
         }
+
+        public void BombExplosionHandling(ItemSO explodingItem)
+        {
+            if (explodingItem == item)
+            {
+                SetLimit();
+            }
+        }
     }
 }

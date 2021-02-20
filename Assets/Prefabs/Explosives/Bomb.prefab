@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7142783178152951158}
   - component: {fileID: 7142783178152951155}
   - component: {fileID: 5915212633468136127}
+  - component: {fileID: 7276957271092576828}
   m_Layer: 7
   m_Name: Bomb
   m_TagString: Untagged
@@ -113,6 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosiveSO: {fileID: 11400000, guid: 11e3e5d7f75d8e7b3aa9087479c6ba54, type: 2}
+  inventorySO: {fileID: 11400000, guid: 87700260270feb74cb9172e545cd4562, type: 2}
+  itemSO: {fileID: 11400000, guid: 67ecdbbd0512f6df8a692a0f020038a2, type: 2}
+  itemSOEventSO: {fileID: 11400000, guid: ca3e5aeb133cf9e608edff63120957ef, type: 2}
 --- !u!65 &5915212633468136127
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,3 +130,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7276957271092576828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142783178152951152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a0ddd10b0ed6245b41a93a033f1bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c80b2a952d6b2a226862ec7b780d0089, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7142783178152951155}
+        m_TargetAssemblyTypeName: Artistas.Explosive, Assembly-CSharp
+        m_MethodName: SetTimedExplosion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
