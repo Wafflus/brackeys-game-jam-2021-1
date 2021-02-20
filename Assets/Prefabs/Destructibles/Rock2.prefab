@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2
 --- !u!1 &3059430374038886795
 GameObject:
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2
 --- !u!1 &3662932619140987754
 GameObject:
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2
 --- !u!1 &3817118121287133905
 GameObject:
@@ -566,7 +566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2
 --- !u!1 &4680581050221299034
 GameObject:
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2
 --- !u!1 &5639075564670265382
 GameObject:
@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2
 --- !u!1 &7583016592094495337
 GameObject:
@@ -1179,5 +1179,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f0d84f6916b3a7f48172f03f4abb888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: {fileID: 0}
+  soundList: {fileID: 11400000, guid: 75a522d4cce2da93abb008480d8b561d, type: 2}
   minimumVelocityMagnitude: 2

@@ -21,12 +21,17 @@ MonoBehaviour:
   propsCollisionLayer:
     serializedVersion: 2
     m_Bits: 64
+  destructibleCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
   explosionRadius: 15
   instantExplosionRadius: 0.8
   explosionForce: 5000
   timedExplosionTimer: 1
+  maxShakeForce: 2
   explosionEffects:
   - {fileID: 1619654584324332379, guid: 59f8fa99c0aec9f4abd69ccd85893be2, type: 3}
+  explosionSounds: {fileID: 11400000, guid: 88e6ea486b5490bf2a38b3715922c48a, type: 2}
   explosionGizmosData:
     color: {r: 0, g: 0.50179243, b: 1, a: 1}
     type: 3
