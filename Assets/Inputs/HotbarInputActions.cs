@@ -172,6 +172,33 @@ namespace Artistas
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Camera"",
+            ""id"": ""7dfa0a9c-6e7c-4278-bd08-8bd403dd391b"",
+            ""actions"": [
+                {
+                    ""name"": ""FreeCamera"",
+                    ""type"": ""Button"",
+                    ""id"": ""b1351882-b8f6-4f9d-9511-6df50dc0945f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e4a9bbdb-c71c-4b89-8e53-ff696af1d126"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""FreeCamera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -189,6 +216,9 @@ namespace Artistas
             m_Detonator = asset.FindActionMap("Detonator", throwIfNotFound: true);
             m_Detonator_Explosive = m_Detonator.FindAction("Explosive", throwIfNotFound: true);
             m_Detonator_Button = m_Detonator.FindAction("Button", throwIfNotFound: true);
+            // Camera
+            m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
+            m_Camera_FreeCamera = m_Camera.FindAction("FreeCamera", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -365,6 +395,39 @@ namespace Artistas
             }
         }
         public DetonatorActions @Detonator => new DetonatorActions(this);
+
+        // Camera
+        private readonly InputActionMap m_Camera;
+        private ICameraActions m_CameraActionsCallbackInterface;
+        private readonly InputAction m_Camera_FreeCamera;
+        public struct CameraActions
+        {
+            private @HotbarInputActions m_Wrapper;
+            public CameraActions(@HotbarInputActions wrapper) { m_Wrapper = wrapper; }
+            public InputAction @FreeCamera => m_Wrapper.m_Camera_FreeCamera;
+            public InputActionMap Get() { return m_Wrapper.m_Camera; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(CameraActions set) { return set.Get(); }
+            public void SetCallbacks(ICameraActions instance)
+            {
+                if (m_Wrapper.m_CameraActionsCallbackInterface != null)
+                {
+                    @FreeCamera.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnFreeCamera;
+                    @FreeCamera.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnFreeCamera;
+                    @FreeCamera.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnFreeCamera;
+                }
+                m_Wrapper.m_CameraActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @FreeCamera.started += instance.OnFreeCamera;
+                    @FreeCamera.performed += instance.OnFreeCamera;
+                    @FreeCamera.canceled += instance.OnFreeCamera;
+                }
+            }
+        }
+        public CameraActions @Camera => new CameraActions(this);
         public interface IWindowActions
         {
             void OnShop(InputAction.CallbackContext context);
@@ -380,6 +443,10 @@ namespace Artistas
         {
             void OnExplosive(InputAction.CallbackContext context);
             void OnButton(InputAction.CallbackContext context);
+        }
+        public interface ICameraActions
+        {
+            void OnFreeCamera(InputAction.CallbackContext context);
         }
     }
 }
