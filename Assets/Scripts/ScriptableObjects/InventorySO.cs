@@ -81,6 +81,8 @@ namespace Artistas
 
 			items[item] += quantity;
 
+			items[item] = Mathf.Clamp(items[item], 0, item.limit);
+
 			return true;
 		}
 

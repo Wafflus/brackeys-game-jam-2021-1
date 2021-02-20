@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Gas
   m_EditorClassIdentifier: 
   explosive: {fileID: 11400000, guid: 6f267f2e3f5af6043aca68f3dc7d80b0, type: 2}
-  explosivePrefab: {fileID: 7413209366455336973, guid: 63e4235b77eb58b4ab406f23e40bb5f1, type: 3}
+  explosivePrefab: {fileID: 360619620074708826, guid: a52709b6424f84740ae475d4a3b86308, type: 3}
+  limit: 0
