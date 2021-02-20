@@ -12,11 +12,15 @@ namespace Artistas
 
 		private Material hpMaterial;
 
-
 		public void Awake()
 		{
 			currentHP = destructibleSO.maxHP;
 			hpMaterial = GetComponent<Renderer>().material;
+		}
+
+		public void Start()
+		{
+			destructibleSO.OnDestructibleAdded.Raise();
 		}
 
 		public void Update()
@@ -34,7 +38,6 @@ namespace Artistas
 			}
 
 			Destruct();
-			UpdateMaterialHP();
 		}
 
 		private void Destruct()
@@ -45,6 +48,9 @@ namespace Artistas
 			{
 				props[i].SetActive(true);
 			}
+
+			destructibleSO.OnDestructibleDestruction.Raise();
+			gameObject.layer = LayerMask.NameToLayer("Default");
 
 			Destroy(gameObject);
 		}
