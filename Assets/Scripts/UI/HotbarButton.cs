@@ -25,10 +25,20 @@ namespace Artistas
 
         private void OnEnable()
         {
-            actionReference.action.Enable();
+            EnableAction();
         }
 
         private void OnDisable()
+        {
+            DisableAction();
+        }
+
+        public void EnableAction()
+        {
+            actionReference.action.Enable();
+        }
+
+        public void DisableAction()
         {
             actionReference.action.Disable();
         }

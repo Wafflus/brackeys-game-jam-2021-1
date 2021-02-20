@@ -157,6 +157,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Camera",
+            "id": "7dfa0a9c-6e7c-4278-bd08-8bd403dd391b",
+            "actions": [
+                {
+                    "name": "FreeCamera",
+                    "type": "Button",
+                    "id": "b1351882-b8f6-4f9d-9511-6df50dc0945f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e4a9bbdb-c71c-4b89-8e53-ff696af1d126",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FreeCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
