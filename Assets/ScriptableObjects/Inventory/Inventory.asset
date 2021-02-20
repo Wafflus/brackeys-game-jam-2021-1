@@ -19,5 +19,5 @@ MonoBehaviour:
     initialQuantity: 0
   - item: {fileID: 11400000, guid: f5a61d1673b20c14baa694e6497c606e, type: 2}
     initialQuantity: 0
-  - item: {fileID: 11400000, guid: 67ecdbbd0512f6df8a692a0f020038a2, type: 2}
+  - item: {fileID: 11400000, guid: 890bbd0bd449d5243a330a492a01a340, type: 2}
     initialQuantity: 1

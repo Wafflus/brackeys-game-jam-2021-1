@@ -3050,14 +3050,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5525266419070663328, guid: 4b171586361d0844dae4c0d1c10247b1, type: 3}
-      propertyPath: OnActionSelected.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 67ecdbbd0512f6df8a692a0f020038a2, type: 2}
-    - target: {fileID: 5525266419070663328, guid: 4b171586361d0844dae4c0d1c10247b1, type: 3}
-      propertyPath: OnActionSelected.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 67ecdbbd0512f6df8a692a0f020038a2, type: 2}
-    - target: {fileID: 5525266419070663328, guid: 4b171586361d0844dae4c0d1c10247b1, type: 3}
       propertyPath: OnActionSelected.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Artistas.ItemSO, Assembly-CSharp
       objectReference: {fileID: 0}
