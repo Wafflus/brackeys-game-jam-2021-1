@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe43b50d50b69640b49a04e536d4b6c, type: 3}
   m_Name: Dynamite
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 76d71332d62b9f842953c824b86710a6, type: 3}
   title: Dynamite
   description: Small, but you can explode it anywhere you want.
   explosiveCollisionLayer:
