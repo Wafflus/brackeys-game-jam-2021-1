@@ -9,6 +9,7 @@ namespace Artistas
 		public float healingFactor;
 		public int reward;
 		public CurrencySO currency;
+		public GameEventSO OnDestructibleDestruction;
 
 		public void AddReward()
 		{

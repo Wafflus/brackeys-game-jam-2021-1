@@ -12,7 +12,6 @@ namespace Artistas
 
 		private Material hpMaterial;
 
-
 		public void Awake()
 		{
 			currentHP = destructibleSO.maxHP;
@@ -45,6 +44,8 @@ namespace Artistas
 			{
 				props[i].SetActive(true);
 			}
+
+			destructibleSO.OnDestructibleDestruction.Raise();
 
 			Destroy(gameObject);
 		}
