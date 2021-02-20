@@ -18,6 +18,11 @@ namespace Artistas
 			hpMaterial = GetComponent<Renderer>().material;
 		}
 
+		public void Start()
+		{
+			destructibleSO.OnDestructibleAdded.Raise();
+		}
+
 		public void Update()
 		{
 			Heal();
@@ -33,7 +38,6 @@ namespace Artistas
 			}
 
 			Destruct();
-			UpdateMaterialHP();
 		}
 
 		private void Destruct()
@@ -46,6 +50,7 @@ namespace Artistas
 			}
 
 			destructibleSO.OnDestructibleDestruction.Raise();
+			gameObject.layer = LayerMask.NameToLayer("Default");
 
 			Destroy(gameObject);
 		}

@@ -250,6 +250,9 @@ GameObject:
   - component: {fileID: 5929613083916931829}
   - component: {fileID: 5929613083916931827}
   - component: {fileID: 5929613083916931828}
+  - component: {fileID: 6181643220044008682}
+  - component: {fileID: 2000721877597627696}
+  - component: {fileID: 3523836692715823985}
   m_Layer: 5
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -315,6 +318,76 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6181643220044008682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929613083916931830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b739651beca38236697777cfca05a70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progressSlider: {fileID: 5929613083220560990}
+  OnAllDestructiblesDestructed: {fileID: 11400000, guid: 7c305e988ea7d141fa687d983e668dd6, type: 2}
+--- !u!114 &2000721877597627696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929613083916931830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a0ddd10b0ed6245b41a93a033f1bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e614e80174e98a974b3572d94f0e10e3, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6181643220044008682}
+        m_TargetAssemblyTypeName: Artistas.CurrentProgress, Assembly-CSharp
+        m_MethodName: DecreaseCurrentDestructibleCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3523836692715823985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929613083916931830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a0ddd10b0ed6245b41a93a033f1bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: cc9cf22d491187f889b15037f27e7bb8, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6181643220044008682}
+        m_TargetAssemblyTypeName: Artistas.CurrentProgress, Assembly-CSharp
+        m_MethodName: IncreaseDestructibleCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5929613084053606825
 GameObject:
   m_ObjectHideFlags: 0

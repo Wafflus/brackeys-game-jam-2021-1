@@ -16,4 +16,5 @@ MonoBehaviour:
   healingFactor: 2
   reward: 10
   currency: {fileID: 11400000, guid: 763f27d18266d9446b068018af3240c0, type: 2}
+  OnDestructibleAdded: {fileID: 11400000, guid: cc9cf22d491187f889b15037f27e7bb8, type: 2}
   OnDestructibleDestruction: {fileID: 11400000, guid: e614e80174e98a974b3572d94f0e10e3, type: 2}
