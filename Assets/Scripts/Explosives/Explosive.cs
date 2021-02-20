@@ -5,6 +5,9 @@ namespace Artistas
     public class Explosive : MonoBehaviour
     {
         [SerializeField] private ExplosiveSO explosiveSO;
+        [SerializeField] private InventorySO inventorySO;
+        [SerializeField] private ItemSO itemSO;
+        [SerializeField] private ItemSOEventSO itemSOEventSO;
 
         private Rigidbody rb;
 
@@ -68,6 +71,7 @@ namespace Artistas
             DamageDestructibles();
             InstantiateExplosionEffect();
             PlayExplosionSound();
+            IncreaseInventory();
 
             Destroy(gameObject);
         }
@@ -77,6 +81,12 @@ namespace Artistas
             gameObject.layer = LayerMask.NameToLayer("Default");
 
             timedExplosion = true;
+        }
+
+        private void IncreaseInventory()
+        {
+            inventorySO.IncreaseQuantity(itemSO, 1);
+            itemSOEventSO.Raise(itemSO);
         }
 
         private void ExplodeNearbyExplosives()

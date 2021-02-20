@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TriggerBomb",
+                    "type": "Button",
+                    "id": "149646af-9a89-4404-bd44-0b7c6134dca7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -162,6 +170,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "PlaceItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a99f0127-c735-4ffe-924d-7ed9c68ba9de",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerBomb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

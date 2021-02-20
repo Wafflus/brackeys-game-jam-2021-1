@@ -67,6 +67,14 @@ namespace Artistas
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""TriggerBomb"",
+                    ""type"": ""Button"",
+                    ""id"": ""149646af-9a89-4404-bd44-0b7c6134dca7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -179,6 +187,17 @@ namespace Artistas
                     ""action"": ""PlaceItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a99f0127-c735-4ffe-924d-7ed9c68ba9de"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TriggerBomb"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -193,6 +212,7 @@ namespace Artistas
             m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
             m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
             m_Player_PlaceItem = m_Player.FindAction("PlaceItem", throwIfNotFound: true);
+            m_Player_TriggerBomb = m_Player.FindAction("TriggerBomb", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -248,6 +268,7 @@ namespace Artistas
         private readonly InputAction m_Player_Sprint;
         private readonly InputAction m_Player_Crouch;
         private readonly InputAction m_Player_PlaceItem;
+        private readonly InputAction m_Player_TriggerBomb;
         public struct PlayerActions
         {
             private @PlayerInputActions m_Wrapper;
@@ -258,6 +279,7 @@ namespace Artistas
             public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
             public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
             public InputAction @PlaceItem => m_Wrapper.m_Player_PlaceItem;
+            public InputAction @TriggerBomb => m_Wrapper.m_Player_TriggerBomb;
             public InputActionMap Get() { return m_Wrapper.m_Player; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -285,6 +307,9 @@ namespace Artistas
                     @PlaceItem.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceItem;
                     @PlaceItem.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceItem;
                     @PlaceItem.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlaceItem;
+                    @TriggerBomb.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTriggerBomb;
+                    @TriggerBomb.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTriggerBomb;
+                    @TriggerBomb.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTriggerBomb;
                 }
                 m_Wrapper.m_PlayerActionsCallbackInterface = instance;
                 if (instance != null)
@@ -307,6 +332,9 @@ namespace Artistas
                     @PlaceItem.started += instance.OnPlaceItem;
                     @PlaceItem.performed += instance.OnPlaceItem;
                     @PlaceItem.canceled += instance.OnPlaceItem;
+                    @TriggerBomb.started += instance.OnTriggerBomb;
+                    @TriggerBomb.performed += instance.OnTriggerBomb;
+                    @TriggerBomb.canceled += instance.OnTriggerBomb;
                 }
             }
         }
@@ -319,6 +347,7 @@ namespace Artistas
             void OnSprint(InputAction.CallbackContext context);
             void OnCrouch(InputAction.CallbackContext context);
             void OnPlaceItem(InputAction.CallbackContext context);
+            void OnTriggerBomb(InputAction.CallbackContext context);
         }
     }
 }
