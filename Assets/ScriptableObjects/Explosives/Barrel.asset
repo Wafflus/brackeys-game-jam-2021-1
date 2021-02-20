@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe43b50d50b69640b49a04e536d4b6c, type: 3}
   m_Name: Barrel
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: fdd8f26b5fb8a7547b51d67a4623dcd5, type: 3}
   title: Barrel
   description: Used to create explosion chain reactions.
   explosiveCollisionLayer:

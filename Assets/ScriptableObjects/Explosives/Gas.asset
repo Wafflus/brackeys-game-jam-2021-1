@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe43b50d50b69640b49a04e536d4b6c, type: 3}
   m_Name: Gas
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4ce3dbcfc47d375439a8878da1c672bf, type: 3}
   title: Gas
   description: Used to create explosion chain reactions.
   explosiveCollisionLayer:

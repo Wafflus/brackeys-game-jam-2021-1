@@ -16,5 +16,5 @@ MonoBehaviour:
   pluralName: Dollars
   symbolString: $
   description: Used to buy stuff on the shop.
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 91e1d2af7929cfb408ab84d276e252f4, type: 3}
   amount: 0
