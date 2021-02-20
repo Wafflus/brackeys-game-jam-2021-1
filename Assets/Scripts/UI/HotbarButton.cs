@@ -33,6 +33,16 @@ namespace Artistas
             actionReference.action.Disable();
         }
 
+        public void InvokeOnActionSelected()
+        {
+            OnActionSelected.Invoke();
+        }
+
+        public void InvokeOnActionDeselected()
+        {
+            OnActionDeselected.Invoke();
+        }
+
         private void OnActionPerformed()
         {
             if (!selected)

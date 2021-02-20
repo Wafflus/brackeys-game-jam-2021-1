@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using UnityEngine;
 
@@ -17,12 +18,26 @@ namespace Artistas
 
         private void OnEnable()
         {
-            InputActions.Enable();
+            Unlock();
         }
 
         private void OnDisable()
         {
+            Lock();
+        }
+
+        public void Lock()
+        {
             InputActions.Disable();
+
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        public void Unlock()
+        {
+            InputActions.Enable();
+
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         public Vector2 GetPlayerMovement()
