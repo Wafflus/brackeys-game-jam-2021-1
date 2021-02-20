@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260394e3f5927bae8b3ef875512ef1ef, type: 3}
+  m_Name: Boat
+  m_EditorClassIdentifier: 
+  maxHP: 150
+  healingFactor: 15
+  reward: 125
+  currency: {fileID: 11400000, guid: 763f27d18266d9446b068018af3240c0, type: 2}
