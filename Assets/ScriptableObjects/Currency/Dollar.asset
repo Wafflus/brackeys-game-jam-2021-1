@@ -17,4 +17,4 @@ MonoBehaviour:
   symbolString: $
   description: Used to buy stuff on the shop.
   icon: {fileID: 0}
-  amount: 2000
+  amount: 0

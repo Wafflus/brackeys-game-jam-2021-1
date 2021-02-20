@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Box
   m_EditorClassIdentifier: 
   explosive: {fileID: 11400000, guid: 9fef38b53e628de4fb7e0c6c4ec04b3c, type: 2}
-  explosivePrefab: {fileID: 8737002295693799165, guid: 040dbcb1824b05847b3233fe4cb9d22f, type: 3}
+  explosivePrefab: {fileID: 8589806083124165380, guid: d0d6b8d2acbb90546bfe31094dcf4cb6, type: 3}
+  limit: 0
