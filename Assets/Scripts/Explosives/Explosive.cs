@@ -33,6 +33,11 @@ namespace Artistas
             Tick();
         }
 
+        private void Start()
+        {
+            SetTimedExplosion();
+        }
+
         private void FixedUpdate()
         {
             if (!timedExplosion)
