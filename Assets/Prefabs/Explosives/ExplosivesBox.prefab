@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5463169980422270491}
   - component: {fileID: 7797388395821750993}
   - component: {fileID: 5656580643642581165}
-  - component: {fileID: 3538499326325809492}
+  - component: {fileID: 8005168974300458579}
   - component: {fileID: 8711633699604302024}
   m_Layer: 7
   m_Name: ExplosivesBox
@@ -100,7 +100,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &3538499326325809492
+--- !u!65 &8005168974300458579
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,7 +111,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
+  m_Size: {x: 2.8, y: 1.4, z: 1.4000001}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8711633699604302024
 MonoBehaviour:

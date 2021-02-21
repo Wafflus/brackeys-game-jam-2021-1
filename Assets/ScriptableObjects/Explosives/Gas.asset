@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 4ce3dbcfc47d375439a8878da1c672bf, type: 3}
   title: Gas
-  description: Used to create explosion chain reactions.
+  description: A larger explosion than the Barrel. Can be used to create explosion
+    chain reactions.
   explosiveCollisionLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -23,12 +24,12 @@ MonoBehaviour:
     m_Bits: 64
   destructibleCollisionLayer:
     serializedVersion: 2
-    m_Bits: 0
-  explosionRadius: 8.5
+    m_Bits: 256
+  explosionRadius: 18
   instantExplosionRadius: 0.7
-  explosionForce: 3000
+  explosionForce: 3500
   timedExplosionTimer: 1
-  maxShakeForce: 2
+  maxShakeForce: 25
   explosionEffects:
   - {fileID: 7557347040806164262, guid: 76bf81cde656b04439ade51a435a3984, type: 3}
   explosionSounds: {fileID: 11400000, guid: 88e6ea486b5490bf2a38b3715922c48a, type: 2}

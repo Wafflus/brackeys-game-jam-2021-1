@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260394e3f5927bae8b3ef875512ef1ef, type: 3}
   m_Name: Cactus
   m_EditorClassIdentifier: 
-  maxHP: 40
+  maxHP: 800
   healingFactor: 7
   reward: 12
   currency: {fileID: 11400000, guid: 763f27d18266d9446b068018af3240c0, type: 2}

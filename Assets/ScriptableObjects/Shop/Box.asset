@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: f5a61d1673b20c14baa694e6497c606e, type: 2}
   currency: {fileID: 11400000, guid: 763f27d18266d9446b068018af3240c0, type: 2}
-  basePrice: 15
-  priceIncrease: 15
+  basePrice: 100
+  priceIncrease: 100
   timesPurchased: 0
