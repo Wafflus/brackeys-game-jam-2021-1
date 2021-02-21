@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 260394e3f5927bae8b3ef875512ef1ef, type: 3}
   m_Name: Tree
   m_EditorClassIdentifier: 
-  maxHP: 75
+  maxHP: 1500
   healingFactor: 10
-  reward: 75
+  reward: 25
   currency: {fileID: 11400000, guid: 763f27d18266d9446b068018af3240c0, type: 2}
   OnDestructibleAdded: {fileID: 11400000, guid: cc9cf22d491187f889b15037f27e7bb8, type: 2}
   OnDestructibleDestruction: {fileID: 11400000, guid: e614e80174e98a974b3572d94f0e10e3, type: 2}

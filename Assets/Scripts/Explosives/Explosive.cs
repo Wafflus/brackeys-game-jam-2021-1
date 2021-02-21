@@ -14,6 +14,8 @@ namespace Artistas
         private bool timedExplosion = false;
         private float explosionTimer;
 
+        private bool exploded;
+
         private void Awake()
         {
             explosionTimer = explosiveSO.timedExplosionTimer;
@@ -65,7 +67,15 @@ namespace Artistas
 
         public void Explode()
         {
-            gameObject.layer = LayerMask.NameToLayer("Props");
+            if (exploded && !timedExplosion)
+            {
+                return;
+            }
+
+            exploded = true;
+            timedExplosion = false;
+
+            gameObject.layer = LayerMask.NameToLayer("Default");
 
             ExplodeNearbyExplosives();
             DamageDestructibles();

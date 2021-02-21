@@ -24,16 +24,16 @@ MonoBehaviour:
   destructibleCollisionLayer:
     serializedVersion: 2
     m_Bits: 256
-  explosionRadius: 7
+  explosionRadius: 12
   instantExplosionRadius: 0.6
   explosionForce: 2500
-  timedExplosionTimer: 5
-  maxShakeForce: 30
+  timedExplosionTimer: 1
+  maxShakeForce: 25
   explosionEffects:
   - {fileID: 3218916212543039552, guid: 86655ca7d97ac9e40a95c82f127eba91, type: 3}
   explosionSounds: {fileID: 11400000, guid: 88e6ea486b5490bf2a38b3715922c48a, type: 2}
   explosionGizmosData:
-    color: {r: 1, g: 0.42470443, b: 0, a: 1}
+    color: {r: 1, g: 0.12406184, b: 0, a: 1}
     type: 3
   instantExplosionGizmosData:
     color: {r: 1, g: 0, b: 0.049562454, a: 1}

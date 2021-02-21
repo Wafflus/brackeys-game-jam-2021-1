@@ -24,11 +24,11 @@ MonoBehaviour:
   destructibleCollisionLayer:
     serializedVersion: 2
     m_Bits: 256
-  explosionRadius: 3
-  instantExplosionRadius: 0.6
+  explosionRadius: 6
+  instantExplosionRadius: 0.5
   explosionForce: 1500
-  timedExplosionTimer: 1
-  maxShakeForce: 30
+  timedExplosionTimer: 3
+  maxShakeForce: 0
   explosionEffects:
   - {fileID: 4615708765479535246, guid: 9381d4d710c3ccf4bba427cdafd417a6, type: 3}
   explosionSounds: {fileID: 11400000, guid: 88e6ea486b5490bf2a38b3715922c48a, type: 2}
