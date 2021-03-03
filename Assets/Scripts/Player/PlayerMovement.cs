@@ -4,17 +4,17 @@ namespace Artistas
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [Header("Movement")]
-        [SerializeField] private float speed = 25f;
-        [SerializeField] private float sprintSpeedBonus = 5f;
+        [field: Header("Movement")]
+        [field: SerializeField] public float Speed { get; set; } = 25f;
+        [field: SerializeField] public float SprintSpeedBonus { get; set; } = 5f;
 
-        [Header("Jump")]
-        [SerializeField] private float jumpHeight = 1f;
-        [SerializeField] private float gravity = -9.81f;
+        [field: Header("Jump")]
+        [field: SerializeField] public float JumpHeight { get; set; } = 1f;
+        [field: SerializeField] public float Gravity { get; set; } = -9.81f;
 
         [Header("Crouch")]
         [SerializeField] private float crouchHeightPercentage = .5f;
-        [SerializeField] private float crouchSpeedReduction = 10f;
+        [field: Range(0, 1)] [field: SerializeField] public float CrouchSpeedReduction { get; set; } = .5f;
 
         [Header("Free Camera")]
         [SerializeField] private bool goBackToPreviousPosition = true;
@@ -102,7 +102,7 @@ namespace Artistas
             movement.y += Mathf.Sqrt(moveUpSpeed * input.GetPlayerJumpHold() * Time.deltaTime);
             movement.y -= Mathf.Sqrt(moveDownSpeed * input.GetPlayerCrouch() * Time.deltaTime);
 
-            controller.Move(movement * (speed + (moveFasterSpeed * input.GetPlayerSprint())) * Time.deltaTime);
+            controller.Move(movement * (Speed + (moveFasterSpeed * input.GetPlayerSprint())) * Time.deltaTime);
         }
 
         private void Move()
@@ -113,20 +113,21 @@ namespace Artistas
 
             movement.y = 0f;
 
-            float sprintSpeed = sprintSpeedBonus * input.GetPlayerSprint();
-            float crouchSpeed = crouchSpeedReduction * input.GetPlayerCrouch();
+            float sprintSpeed = SprintSpeedBonus * input.GetPlayerSprint();
+            float crouchSpeed = CrouchSpeedReduction * input.GetPlayerCrouch();
+            float moveSpeed = Speed + sprintSpeed;
 
-            controller.Move(movement * (speed + sprintSpeed - crouchSpeed) * Time.deltaTime);
+            controller.Move(movement * (moveSpeed - (moveSpeed * crouchSpeed)) * Time.deltaTime);
         }
 
         private void Jump()
         {
             if (input.Jumped() && grounded)
             {
-                velocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+                velocity.y += Mathf.Sqrt(JumpHeight * -3.0f * Gravity);
             }
 
-            velocity.y += gravity * Time.deltaTime;
+            velocity.y += Gravity * Time.deltaTime;
 
             controller.Move(velocity * Time.deltaTime);
         }

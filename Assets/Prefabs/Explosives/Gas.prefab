@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5111876091026731393}
   - component: {fileID: 838449384253324222}
   - component: {fileID: 67020302348262137}
+  - component: {fileID: 8233110893123146806}
   m_Layer: 7
   m_Name: Gas
   m_TagString: Untagged
@@ -111,9 +112,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.46
-  m_Height: 1.78
+  m_Height: 1.6416342
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.06918287, z: 0}
 --- !u!114 &67020302348262137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +131,16 @@ MonoBehaviour:
   inventorySO: {fileID: 11400000, guid: 87700260270feb74cb9172e545cd4562, type: 2}
   itemSO: {fileID: 11400000, guid: fa8cb1f0c5bddea4c9a66b798c3cdb28, type: 2}
   itemSOEventSO: {fileID: 11400000, guid: ca3e5aeb133cf9e608edff63120957ef, type: 2}
+--- !u!65 &8233110893123146806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360619620074708826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9458128, y: 0.055871487, z: 0.85293853}
+  m_Center: {x: 0, y: -0.66209185, z: 0}
