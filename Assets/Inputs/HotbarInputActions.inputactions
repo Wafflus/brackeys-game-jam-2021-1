@@ -131,6 +131,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Cleaner",
+                    "type": "Button",
+                    "id": "d848cc9c-7ed6-4dee-8d1c-f8bbabc5681b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -153,6 +161,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f771a583-6b2f-47d7-975a-ac8f11624f98",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cleaner",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
