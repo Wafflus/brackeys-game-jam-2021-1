@@ -131,6 +131,21 @@ MonoBehaviour:
   inventorySO: {fileID: 11400000, guid: 87700260270feb74cb9172e545cd4562, type: 2}
   itemSO: {fileID: 11400000, guid: fa8cb1f0c5bddea4c9a66b798c3cdb28, type: 2}
   itemSOEventSO: {fileID: 11400000, guid: ca3e5aeb133cf9e608edff63120957ef, type: 2}
+  OnExplode:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: c6bd35540170ea742bb8bca18ddc1727, type: 2}
+        m_TargetAssemblyTypeName: Artistas.CleanerSO, Assembly-CSharp
+        m_MethodName: Remove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &8233110893123146806
 BoxCollider:
   m_ObjectHideFlags: 0
