@@ -5,7 +5,6 @@ namespace Artistas
 	public class PlayerTrigger : MonoBehaviour
 	{
 		[SerializeField] private GameEventSO OnBombTrigger;
-		[SerializeField] private GameEventSO OnCleanerTrigger;
 
 		private PlayerInput input;
 
@@ -24,11 +23,6 @@ namespace Artistas
 			if (input.TriggerBomb())
 			{
 				OnBombTrigger.Raise();
-			}
-
-			if (input.TriggerCleaner())
-            {
-				OnCleanerTrigger.Raise();
 			}
 		}
 	}

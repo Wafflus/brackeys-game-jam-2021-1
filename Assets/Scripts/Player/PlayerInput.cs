@@ -84,34 +84,9 @@ namespace Artistas
             return InputActions.Player.PlaceItem.triggered;
         }
 
-        public void DisableBomb()
-        {
-            InputActions.Player.TriggerBomb.Disable();
-        }
-
-        public void EnableBomb()
-        {
-            InputActions.Player.TriggerBomb.Enable();
-        }
-
         public bool TriggerBomb()
         {
             return InputActions.Player.TriggerBomb.triggered;
-        }
-
-        public void DisableCleaner()
-        {
-            InputActions.Player.TriggerCleaner.Disable();
-        }
-
-        public void EnableCleaner()
-        {
-            InputActions.Player.TriggerCleaner.Enable();
-        }
-
-        public bool TriggerCleaner()
-        {
-            return InputActions.Player.TriggerCleaner.triggered;
         }
     }
 }

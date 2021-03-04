@@ -146,14 +146,6 @@ namespace Artistas
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Cleaner"",
-                    ""type"": ""Button"",
-                    ""id"": ""d848cc9c-7ed6-4dee-8d1c-f8bbabc5681b"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -176,17 +168,6 @@ namespace Artistas
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Button"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f771a583-6b2f-47d7-975a-ac8f11624f98"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Cleaner"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -235,7 +216,6 @@ namespace Artistas
             m_Detonator = asset.FindActionMap("Detonator", throwIfNotFound: true);
             m_Detonator_Explosive = m_Detonator.FindAction("Explosive", throwIfNotFound: true);
             m_Detonator_Button = m_Detonator.FindAction("Button", throwIfNotFound: true);
-            m_Detonator_Cleaner = m_Detonator.FindAction("Cleaner", throwIfNotFound: true);
             // Camera
             m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
             m_Camera_FreeCamera = m_Camera.FindAction("FreeCamera", throwIfNotFound: true);
@@ -380,14 +360,12 @@ namespace Artistas
         private IDetonatorActions m_DetonatorActionsCallbackInterface;
         private readonly InputAction m_Detonator_Explosive;
         private readonly InputAction m_Detonator_Button;
-        private readonly InputAction m_Detonator_Cleaner;
         public struct DetonatorActions
         {
             private @HotbarInputActions m_Wrapper;
             public DetonatorActions(@HotbarInputActions wrapper) { m_Wrapper = wrapper; }
             public InputAction @Explosive => m_Wrapper.m_Detonator_Explosive;
             public InputAction @Button => m_Wrapper.m_Detonator_Button;
-            public InputAction @Cleaner => m_Wrapper.m_Detonator_Cleaner;
             public InputActionMap Get() { return m_Wrapper.m_Detonator; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -403,9 +381,6 @@ namespace Artistas
                     @Button.started -= m_Wrapper.m_DetonatorActionsCallbackInterface.OnButton;
                     @Button.performed -= m_Wrapper.m_DetonatorActionsCallbackInterface.OnButton;
                     @Button.canceled -= m_Wrapper.m_DetonatorActionsCallbackInterface.OnButton;
-                    @Cleaner.started -= m_Wrapper.m_DetonatorActionsCallbackInterface.OnCleaner;
-                    @Cleaner.performed -= m_Wrapper.m_DetonatorActionsCallbackInterface.OnCleaner;
-                    @Cleaner.canceled -= m_Wrapper.m_DetonatorActionsCallbackInterface.OnCleaner;
                 }
                 m_Wrapper.m_DetonatorActionsCallbackInterface = instance;
                 if (instance != null)
@@ -416,9 +391,6 @@ namespace Artistas
                     @Button.started += instance.OnButton;
                     @Button.performed += instance.OnButton;
                     @Button.canceled += instance.OnButton;
-                    @Cleaner.started += instance.OnCleaner;
-                    @Cleaner.performed += instance.OnCleaner;
-                    @Cleaner.canceled += instance.OnCleaner;
                 }
             }
         }
@@ -471,7 +443,6 @@ namespace Artistas
         {
             void OnExplosive(InputAction.CallbackContext context);
             void OnButton(InputAction.CallbackContext context);
-            void OnCleaner(InputAction.CallbackContext context);
         }
         public interface ICameraActions
         {
