@@ -10,7 +10,7 @@ Game made in 7 days for the [brackeys game jam 2021.1](https://itch.io/jam/brack
 
 # Version
 
-Current version: **1.0.0**
+Current version: **1.2.3**
 
 # Credits
 
