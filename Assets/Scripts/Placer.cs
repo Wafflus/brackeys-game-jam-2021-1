@@ -12,7 +12,7 @@ namespace Artistas
 
 		[SerializeField] private InventorySO inventory;
 
-		[SerializeField] private UnityEvent OnPlacement;
+		[SerializeField] private UnityEvent<ItemSO, GameObject> OnPlacement;
 
 		private Collider previewCollider;
 		private MeshRenderer previewRenderer;
@@ -97,9 +97,10 @@ namespace Artistas
 			}
 
 			inventory.DecreaseQuantity(item, 1);
-			OnPlacement.Invoke();
 
-			Instantiate(item.explosivePrefab, transform.position, transform.rotation);
+            GameObject instantiatedItem = Instantiate(item.explosivePrefab, transform.position, transform.rotation);
+
+			OnPlacement.Invoke(item, instantiatedItem);
 
 			return true;
 		}

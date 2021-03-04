@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Artistas
 {
@@ -8,6 +9,9 @@ namespace Artistas
         [SerializeField] private InventorySO inventorySO;
         [SerializeField] private ItemSO itemSO;
         [SerializeField] private ItemSOEventSO itemSOEventSO;
+
+        [Header("Events")]
+        [SerializeField] private UnityEvent<GameObject> OnExplode;
 
         private Rigidbody rb;
 
@@ -82,6 +86,8 @@ namespace Artistas
             InstantiateExplosionEffect();
             PlayExplosionSound();
             IncreaseInventory();
+
+            OnExplode.Invoke(gameObject);
 
             Destroy(gameObject);
         }
