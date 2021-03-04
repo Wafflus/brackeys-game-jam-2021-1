@@ -39,5 +39,15 @@ namespace Artistas
 
             return explosionEffects[randomIndex];
         }
+
+        public void SetExplosionTimer(float value)
+        {
+            if (value < 0)
+            {
+                return;
+            }
+
+            timedExplosionTimer = value;
+        }
     }
 }
